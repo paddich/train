@@ -9,4 +9,4 @@ def index(request):
     return render(request, 'clients/clients_home.html', data)
 
 def settings(request):
-    return HttpResponse('<h2>Test text settings</h2> ')
+    return render(request, 'clients/settings.html')
