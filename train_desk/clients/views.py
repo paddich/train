@@ -1,14 +1,21 @@
 from django.shortcuts import render
 
-def index(request):
+def clients_home(request):
     data = {
         'title': 'Клиенты',
         'clients_name': ['Петров', 'Сидоров', 'Козлов']
     }
     return render(request, 'clients/clients_home.html', data)
 
-def settings(request):
-    return render(request, 'clients/settings.html')
+def clients_set(request):
+    data = {
+        'title': 'Настройки клиентов',
+        'options': ['Сортировать по', 'Удалять не активных', 'Выделять цветом']
+    }
+    return render(request, 'clients/settings.html', data)
 
-def client(request):
-    return render(request, 'clients/client_add.html')
+def client_add(request):
+    data = {
+        'title': 'Добавление клиента'
+    }
+    return render(request, 'clients/client_add.html', data)

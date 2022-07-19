@@ -3,6 +3,11 @@
 {% block title %}Настройки клиентов{% endblock %}
 
 {% block content %}
-    <h1>Настройки клиентов</h1>
-    здесь будут настройки
+    <div class="features">
+        <h1>{{ title }}</h1>
+        <p>Ниже будут настройки</p>
+        {% for i in options %}
+            <p>{{ i }}</p>
+        {% endfor %}
+    </div>
 {% endblock %}

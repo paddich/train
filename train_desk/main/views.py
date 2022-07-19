@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-def index(request):
+def main_home(request):
     data = {
         'title': 'Главная страница',
         'values': ['Some', 'Hello', 'etc']
