@@ -1,22 +1,24 @@
 from django.db import models
 
-class Client(models.Model):
-    name = models.CharField('имя', max_length=50)
-    name2 = models.CharField('фамилия', max_length=50)
-    name3 = models.CharField('отчество', max_length=50)
-    fullname = [name, name2, name3]
-    age = models.CharField('возраст', max_length=3)
-    date = models.DateTimeField('дата создания карточки')
+# class Exercise(models.Model):
+#     title = models.CharField('Название упражнения', max_length=30)
+#
+#     def __str__(self):
+#         return self.title
+#
+#     class Meta:
+#         verbose_name = 'Упражнение'
+#         verbose_name_plural = 'Упражнения'
 
-    # def __str__(self):
-    #     return self.fullname
-    #
-    # def get_absolute_url(self):
-    #     return f'/news/{self.id}'
-    #
-    # class Meta:
-    #     verbose_name = 'Клиенты'
-    #     verbose_name_plural = 'Клиенты'
+class Train(models.Model):
+    title = models.CharField('Название тренировки', max_length=50, default='Новая тренировка')
+    comment = models.CharField('Комментарий', max_length=250, null=True, blank=True)
+    exercises = models.CharField('Упражнения', max_length=300)
+    data = models.DateTimeField('Дата тренировки')
 
-class Training(models.Model):
-    client_action = models.ForeignKey(Client, on_delete=models.CASCADE())
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name = 'Тренировка'
+        verbose_name_plural = 'Тренировки'

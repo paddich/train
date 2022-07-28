@@ -10,8 +10,8 @@
             <p>{{ i }}</p>
         {% endfor %}
         <ul>
-            <a href="{% url 'clients_set' %}"><li><button class="btn btn-warning"><i class="fas fa-plus-circle">Настройки клиентов</i></button></li></a>
-            <a href="{% url 'client_add' %}"><li><button class="btn btn-warning"><i class="fas fa-plus-circle">Добавить клиента</i></button></li></a>
+            <a href="{% url 'clients_set' %}"><button class="btn btn-warning"><i class="fas fa-plus-circle">Настройки клиентов</i></button></a>
+            <a href="{% url 'client_add' %}"><button class="btn btn-warning"><i class="fas fa-plus-circle">Добавить клиента</i></button></a>
         </ul>
     </div>
 {% endblock %}
